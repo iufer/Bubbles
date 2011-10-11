@@ -1,13 +1,15 @@
 # Bubbles
 
-A simple plugin for Raphael.js that makes it (relatively) easy to draw circles containing a piece of data and a corresponding label. The example shows how to load these using Google web fonts and some clean simple CSS styles. 
+A simple plugin for raphael.js that makes it (relatively) easy to draw circles containing a piece of data and its corresponding label. 
+
+[Click here for a live demo](http://iufer.github.com/Bubbles/)
 
 ## Requires
 * [raphael.js](http://github.com/DmitryBaranovskiy/raphael/raw/master/raphael-min.js)
 * [jquery](http://code.google.com/apis/libraries/devguide.html#jquery)
 
 ## Usage
-Include raphael.makeBubble.js
+Include jquery, raphael.js and raphael.makeBubble.js
 Edit the bubbleDefaults as needed
 
 	paper = Raphael();
@@ -21,7 +23,7 @@ Edit the bubbleDefaults as needed
 		  	};
 		  	
 You can change any of these defaults before you call makeBubble(); 
-I have provided a default color set. The colors array contains colors in this format: [background color, stroke color]
+I have provided a default color set. The colors array contains color sets in this format: [background color, stroke color]
 
 ### Create your first bubble
 
