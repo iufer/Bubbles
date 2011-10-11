@@ -23,9 +23,12 @@
 		fontsize = Math.sqrt(width) * 3;
 		if(strong) fontsize *= 1.5;
 		
-		$("<div />")
+		d = $("<div />")
 			.addClass(dataClass)
 			.addClass(this.bubbleDefaults.dataClass)
+			.hide()
+			.css('position','absolute')
+			.css('textAlign','center')
 			.css('width', width)
 			.css('top', top)
 			.css('left', left)
@@ -35,15 +38,20 @@
 		
 		top = originy + (rad * 0.2);
 		
-		$("<div />")
+		l = $("<div />")
 			.addClass(labelClass)
 			.addClass(this.bubbleDefaults.labelClass)
+			.hide()
+			.css('position','absolute')
+			.css('textAlign','center')
 			.css('width', width)
 			.css('top', top)
 			.css('left', left)
 			.css('fontSize', labelsize + 'pt')
 			.html(label)
 			.appendTo(this.bubbleDefaults.texts);
-			
+		
+		setTimeout($.proxy(function(){ $(this.d).fadeIn('slow'); $(this.l).fadeIn('slow'); }, {d:d,l:l}), this.bubbleDefaults.speed * delay);
+		
 		return this;				
 	}
